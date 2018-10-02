@@ -10,7 +10,7 @@ export default class ScrollUtil {
         }
 
         element.scrollTo(0, y
-            - (document.documentElement.offsetHeight
+            - (document.documentElement!.offsetHeight
             - document.body.offsetHeight));
     }
 
@@ -28,7 +28,7 @@ export default class ScrollUtil {
         const tick = 15;
         const initialHeight: number = element.scrollTop;
         const scrollHeight: number = y - element.scrollTop
-            - (document.documentElement.offsetHeight
+            - (document.documentElement!.offsetHeight
             - document.body.offsetHeight);
         const scrollStep: number = Math.PI / (duration / tick);
         const cosParam: number = scrollHeight / 2;
