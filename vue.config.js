@@ -25,6 +25,22 @@ module.exports = {
         module: {
             rules: [
                 {
+                    test: /\.rsass$/,
+                    use: [
+                        { loader: 'vue-style-loader', options: { sourceMap: !isProduct } },
+                        { loader: 'css-loader', options: { sourceMap: !isProduct } },
+                        { loader: 'resolve-url-loader', options: { sourceMap: !isProduct } },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                indentedSyntax: false,
+                                sourceMap: true,
+                                includePaths: [ './src/assets/styles/entry' ]
+                            }
+                        }
+                    ]
+                },
+                {
                     test: /\.rscss$/,
                     use: [
                         { loader: 'vue-style-loader', options: { sourceMap: !isProduct } },
