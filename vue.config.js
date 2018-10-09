@@ -1,3 +1,5 @@
+const path = require('path');
+
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const isProduct = process.env.NODE_ENV == 'production';
@@ -40,24 +42,6 @@ module.exports = {
                             }
                         }
                     ]
-                },
-                {
-                    test: /\.(jp(e?)g|png|gif|svg|bmp)(\?v=\d+\.\d+\.\d+)?$/,
-                    use: [
-                        {
-                            loader: 'file-loader',
-                            options: { name: 'img/[name].[ext]' }
-                        }
-                    ]
-                },
-                {
-                    test: /\.(ttf|otf|eot|woff(2)?)(\?v=\d+\.\d+\.\d+)?$/,
-                    use: [
-                        {
-                            loader: 'file-loader',
-                            options: { name: 'font/[name].[ext]' },
-                        },
-                    ],
                 },
             ],
         },
