@@ -6,6 +6,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const isProduct = process.env.NODE_ENV == 'production';
 
 module.exports = {
+    css: {
+        loaderOptions: {
+            sass: {
+                includePaths: ['./src/assets/styles/entry']
+            }
+        }
+    },
     configureWebpack: {
         devServer: {
             host: '0.0.0.0',
