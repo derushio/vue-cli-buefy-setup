@@ -10,5 +10,7 @@ export default class CLASS_NAME extends Vue {}
 </script>
 
 <style lang='scss' scoped>
+@import 'variables';
+
 .VUE_NAME {}
 </style>
