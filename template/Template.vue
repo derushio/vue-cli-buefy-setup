@@ -9,7 +9,7 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class CLASS_NAME extends Vue {}
 </script>
 
-<style lang='scss' scoped>
+<style lang='rscss' scoped>
 @import 'variable';
 
 .VUE_NAME {}

@@ -1,17 +1,15 @@
-const path = require('path');
-
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isProduct = process.env.NODE_ENV == 'production';
 
 module.exports = {
     css: {
+        sourceMap: !isProduct,
         loaderOptions: {
             sass: {
-                includePaths: ['./src/assets/styles/entry']
-            }
-        }
+                includePaths: ['./src/assets/styles/entry'],
+            },
+        },
     },
     configureWebpack: {
         devServer: {
@@ -27,6 +25,22 @@ module.exports = {
 
         module: {
             rules: [
+                {
+                    test: /\.rscss$/,
+                    use: [
+                        { loader: 'vue-style-loader', options: { sourceMap: !isProduct } },
+                        { loader: 'css-loader', options: { sourceMap: !isProduct } },
+                        { loader: 'resolve-url-loader', options: { sourceMap: !isProduct } },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                indentedSyntax: false,
+                                sourceMap: true,
+                                includePaths: [ './src/assets/styles/entry' ]
+                            }
+                        }
+                    ]
+                },
                 {
                     test: /\.(jp(e?)g|png|gif|svg|bmp)(\?v=\d+\.\d+\.\d+)?$/,
                     use: [
@@ -47,19 +61,6 @@ module.exports = {
                 },
             ],
         },
-
-        plugins: [
-            new CopyWebpackPlugin([
-                {
-                    from: path.resolve(__dirname, './node_modules', '@fortawesome'),
-                    to: path.resolve(__dirname, './dist', 'css/@fortawesome'),
-                },
-                {
-                    from: path.resolve(__dirname, './node_modules', '@mdi'),
-                    to: path.resolve(__dirname, './dist', 'css/@mdi'),
-                },
-            ]),
-        ],
 
         optimization: {
             minimizer: [
