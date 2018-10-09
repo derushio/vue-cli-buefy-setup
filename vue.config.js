@@ -27,7 +27,8 @@ module.exports = {
 
         module: {
             rules: [
-                { test: /\.(jp(e?)g|png|gif|svg|bmp)(\?v=\d+\.\d+\.\d+)?$/,
+                {
+                    test: /\.(jp(e?)g|png|gif|svg|bmp)(\?v=\d+\.\d+\.\d+)?$/,
                     use: [
                         {
                             loader: 'file-loader',
