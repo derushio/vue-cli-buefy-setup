@@ -1,16 +1,21 @@
 <template lang='pug'>
-.VUE_NAME
+#app
+    router-view
 </template>
 
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
-export default class CLASS_NAME extends Vue {}
+export default class App extends Vue {}
 </script>
 
-<style lang='scss' scoped>
+<style lang='rscss'>
+@import 'all';
+</style>
+
+<style lang='scss'>
 @import 'variable';
 
-.VUE_NAME {}
+.app {}
 </style>
