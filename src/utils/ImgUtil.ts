@@ -31,7 +31,7 @@ export default class ImgUtil {
      */
     public static async getOrientation(img: HTMLImageElement) {
         return new Promise<number>((resolve, reject) => {
-            Exif.getData(img, () => {
+            Exif.getData(img as any, () => {
                 const orientation = Exif.getTag(img, 'Orientation');
                 resolve(orientation || 1);
             });
@@ -67,7 +67,7 @@ export default class ImgUtil {
      * @param img
      */
     public static async rotateFromExif(img: HTMLImageElement) {
-        Exif.getData(img, () => {
+        Exif.getData(img as any, () => {
             Exif.getTag(img, 'Orientation');
         });
 
