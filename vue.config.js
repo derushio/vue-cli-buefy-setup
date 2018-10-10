@@ -35,10 +35,10 @@ module.exports = {
                             options: {
                                 indentedSyntax: false,
                                 sourceMap: true,
-                                includePaths: [ './src/assets/styles/entry' ]
-                            }
-                        }
-                    ]
+                                includePaths: [ './src/assets/styles/entry' ],
+                            },
+                        },
+                    ],
                 },
                 {
                     test: /\.rscss$/,
@@ -51,10 +51,10 @@ module.exports = {
                             options: {
                                 indentedSyntax: false,
                                 sourceMap: true,
-                                includePaths: [ './src/assets/styles/entry' ]
-                            }
-                        }
-                    ]
+                                includePaths: [ './src/assets/styles/entry' ],
+                            },
+                        },
+                    ],
                 },
             ],
         },
@@ -66,7 +66,7 @@ module.exports = {
                     uglifyOptions: {
                         ecma: 8,
                         compress: {
-                            warnings: false
+                            warnings: false,
                         },
                     },
                 }),
