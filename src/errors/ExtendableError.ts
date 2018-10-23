@@ -18,7 +18,7 @@ export default abstract class ExtendableError<T> extends ExtendableBuiltin(Error
     public extra: T;
 
     public constructor(message: string, extra: T) {
-        super(message)
+        super(message);
 
         Object.defineProperty(this, 'message', {
             configurable: true,
