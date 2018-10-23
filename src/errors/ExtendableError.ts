@@ -2,13 +2,13 @@
  * Error を継承可能にする
  */
 function ExtendableBuiltin(ec: typeof Error): typeof Error {
-    function ExtendableBuiltin(this: Error) {
+    function extendableBuiltin(this: Error) {
         ec.apply(this, arguments);
     }
     ExtendableBuiltin.prototype = Object.create(ec.prototype);
-    Object.setPrototypeOf(ExtendableBuiltin, ec);
+    Object.setPrototypeOf(extendableBuiltin, ec);
 
-    return ExtendableBuiltin as typeof Error;
+    return extendableBuiltin as typeof Error;
 }
 
 /**
