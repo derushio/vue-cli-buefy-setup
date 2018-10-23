@@ -20,6 +20,7 @@ module.exports = {
             alias: {
                 'vue$': 'vue/dist/vue.esm.js',
             },
+            mainFields: ['browser', 'main', 'module'],
         },
 
         module: {
