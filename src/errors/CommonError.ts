@@ -1,4 +1,4 @@
-import ExtendableError from '@/model/error/ExtendableError';
+import ExtendableError from '@/errors/ExtendableError';
 
 export class CommonError extends ExtendableError<any> {
     public constructor(message: string, extra: any = {}) {
