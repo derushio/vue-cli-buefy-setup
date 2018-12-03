@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const isProduct = process.env.NODE_ENV == 'production';
 
